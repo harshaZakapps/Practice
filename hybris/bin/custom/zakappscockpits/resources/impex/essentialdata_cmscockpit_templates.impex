@@ -13,7 +13,7 @@
 # Import CMS Cockpit customizations
 #
 
-$jarResource=jar:com.hybris.zakapps.cockpits.constants.ZakappsCockpitsConstants&/zakappscockpits/cmscockpit
+$jarResource=jar:com.zakapps.cockpits.constants.ZakappsCockpitsConstants&/zakappscockpits/cmscockpit
 
 
 INSERT_UPDATE CockpitUIScriptConfigMedia;code[unique=true];allowScriptEvaluation;mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]

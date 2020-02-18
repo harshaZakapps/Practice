@@ -36,7 +36,7 @@
 
 	<!--#### Catalog perspective for Accelerator starts  #### -->
 	<bean id="CatalogPerspective"
-		class="com.hybris.zakapps.cockpits.cmscockpit.session.impl.DefaultWCMSPerspective"
+		class="com.zakapps.cockpits.cmscockpit.session.impl.DefaultWCMSPerspective"
 		scope="session" parent="BasePerspective" autowire="byName">
 		<property name="uid" value="cmscockpit.perspective.catalog" />
 		<property name="label" value="cmscockpit.perspective.catalog" />
@@ -48,7 +48,7 @@
 		</property>
 		<property name="browserArea">
 			<bean
-				class="com.hybris.zakapps.cockpits.cmscockpit.session.impl.DefaultCatalogBrowserArea">
+				class="com.zakapps.cockpits.cmscockpit.session.impl.DefaultCatalogBrowserArea">
 				<property name="cmsCatalogBrowserModelFactory" ref="cmsCatalogBrowserModelFactory" />
 				<property name="rootSearchTypeCode" value="AbstractPage" />
 				<property name="viewURI" value="/cmscockpit/catalogBrowser.zul" />

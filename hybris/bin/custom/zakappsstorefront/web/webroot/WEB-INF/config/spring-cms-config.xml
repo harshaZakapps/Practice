@@ -32,7 +32,7 @@
 	<bean id="defaultRequestContextData" class="de.hybris.platform.acceleratorservices.data.RequestContextData" scope="request"/>
 
 	<!-- Converter that creates the CMS Restriction Data -->
-	<bean id="requestContextRestrictionConverter" class="com.hybris.zakapps.storefront.util.RequestContextRestrictionConverter" >
+	<bean id="requestContextRestrictionConverter" class="com.zakapps.storefront.util.RequestContextRestrictionConverter" >
 		<property name="cmsDataFactory" ref="cmsDataFactory"/>
 	</bean>
 
@@ -40,7 +40,7 @@
 	<!-- CMS Component Renderers -->
 
 	<alias name="defaultCMSLinkComponentRenderer" alias="cmsLinkComponentRenderer"/>
-	<bean id="defaultCMSLinkComponentRenderer" class="com.hybris.zakapps.storefront.renderer.CMSLinkComponentRenderer" >
+	<bean id="defaultCMSLinkComponentRenderer" class="com.zakapps.storefront.renderer.CMSLinkComponentRenderer" >
 		<property name="categoryUrlConverter" ref="categoryUrlConverter"/>
 		<property name="productUrlConverter" ref="productUrlConverter"/>
 	</bean>

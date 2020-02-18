@@ -24,9 +24,9 @@ $image=image(code, $contentCV);
 $media=media(code, $contentCV);
 $page=page(uid, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
-$siteResource=jar:com.hybris.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/contentCatalogs/$contentCatalog
-$productResource=jar:com.hybris.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/productCatalogs/$productCatalog
-$jarResourceCms=jar:com.hybris.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/cockpits/cmscockpit
+$siteResource=jar:com.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/contentCatalogs/$contentCatalog
+$productResource=jar:com.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.zakapps.initialdata.setup.InitialDataSystemSetup&/zakappsinitialdata/import/cockpits/cmscockpit
 
 
 # CMS Site Settings

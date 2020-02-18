@@ -24,37 +24,37 @@
 
 	<!-- Consignment Process Actions -->
 
-	<bean id="sendConsignmentToWarehouseAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SendConsignmentToWarehouseAction"  parent="abstractAction">
+	<bean id="sendConsignmentToWarehouseAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SendConsignmentToWarehouseAction"  parent="abstractAction">
 		<property name="process2WarehouseAdapter" ref="process2WarehouseAdapter"/>
 	</bean>
 
-	<bean id="waitBeforeTransmissionAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.WaitBeforeTransmissionAction"  parent="abstractAction"/>
+	<bean id="waitBeforeTransmissionAction" class="com.zakapps.fulfilmentprocess.actions.consignment.WaitBeforeTransmissionAction"  parent="abstractAction"/>
 
-	<bean id="receiveConsignmentStatusAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.ReceiveConsignmentStatusAction"  parent="abstractAction"/>
+	<bean id="receiveConsignmentStatusAction" class="com.zakapps.fulfilmentprocess.actions.consignment.ReceiveConsignmentStatusAction"  parent="abstractAction"/>
 
-	<bean id="confirmConsignmentPickupAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.ConfirmConsignmentPickupAction"  parent="abstractAction"/>
+	<bean id="confirmConsignmentPickupAction" class="com.zakapps.fulfilmentprocess.actions.consignment.ConfirmConsignmentPickupAction"  parent="abstractAction"/>
 
-	<bean id="sendDeliveryMessageAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SendDeliveryMessageAction"  parent="abstractAction">
+	<bean id="sendDeliveryMessageAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SendDeliveryMessageAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="sendReadyForPickupMessageAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SendReadyForPickupMessageAction"  parent="abstractAction">
+	<bean id="sendReadyForPickupMessageAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SendReadyForPickupMessageAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 	
-	<bean id="sendPickedUpMessageAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SendPickedUpMessageAction"  parent="abstractAction">
+	<bean id="sendPickedUpMessageAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SendPickedUpMessageAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="cancelConsignmentAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.CancelConsignmentAction"  parent="abstractAction"/>
+	<bean id="cancelConsignmentAction" class="com.zakapps.fulfilmentprocess.actions.consignment.CancelConsignmentAction"  parent="abstractAction"/>
 
-	<bean id="sendCancelMessageAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SendCancelMessageAction"  parent="abstractAction"/>
+	<bean id="sendCancelMessageAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SendCancelMessageAction"  parent="abstractAction"/>
 
-	<bean id="subprocessEndAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.SubprocessEndAction"  parent="abstractAction">
+	<bean id="subprocessEndAction" class="com.zakapps.fulfilmentprocess.actions.consignment.SubprocessEndAction"  parent="abstractAction">
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 
-	<bean id="allowShipmentAction" class="com.hybris.zakapps.fulfilmentprocess.actions.consignment.AllowShipmentAction"  parent="abstractAction">
+	<bean id="allowShipmentAction" class="com.zakapps.fulfilmentprocess.actions.consignment.AllowShipmentAction"  parent="abstractAction">
 		<property name="process2WarehouseAdapter" ref="process2WarehouseAdapter"/>
 	</bean>
 

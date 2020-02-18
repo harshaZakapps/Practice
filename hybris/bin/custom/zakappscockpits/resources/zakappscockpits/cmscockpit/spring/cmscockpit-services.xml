@@ -43,18 +43,18 @@
 		</property>
 	</bean>
 
-	<bean id="abstractUiExperienceBrowserFilter" abstract="true" class="com.hybris.zakapps.cockpits.cmscockpit.browser.filters.AbstractUiExperienceFilter" >
+	<bean id="abstractUiExperienceBrowserFilter" abstract="true" class="com.zakapps.cockpits.cmscockpit.browser.filters.AbstractUiExperienceFilter" >
 		<property name="typeService" ref="cockpitTypeService"/>
 	</bean>
-	<bean id="mobileUiExperienceBrowserFilter" parent="abstractUiExperienceBrowserFilter" class="com.hybris.zakapps.cockpits.cmscockpit.browser.filters.MobileUiExperienceBrowserFilter" />
-	<bean id="desktopUiExperienceBrowserFilter" parent="abstractUiExperienceBrowserFilter" class="com.hybris.zakapps.cockpits.cmscockpit.browser.filters.DesktopUiExperienceBrowserFilter" />
+	<bean id="mobileUiExperienceBrowserFilter" parent="abstractUiExperienceBrowserFilter" class="com.zakapps.cockpits.cmscockpit.browser.filters.MobileUiExperienceBrowserFilter" />
+	<bean id="desktopUiExperienceBrowserFilter" parent="abstractUiExperienceBrowserFilter" class="com.zakapps.cockpits.cmscockpit.browser.filters.DesktopUiExperienceBrowserFilter" />
 
 	<alias alias="cmsSearchProvider" name="uiExperienceCmsSearchProvider" />
-	<bean id="uiExperienceCmsSearchProvider"  class="com.hybris.zakapps.cockpits.cmscockpit.services.impl.UiExperienceCmsSearchProvider" />
+	<bean id="uiExperienceCmsSearchProvider"  class="com.zakapps.cockpits.cmscockpit.services.impl.UiExperienceCmsSearchProvider" />
 
 
     <alias name="DefaultCmsPageBrowserModel" alias="cmsPageBrowserModel"/>
-    <bean id="DefaultCmsPageBrowserModel" class="com.hybris.zakapps.cockpits.cmscockpit.session.impl.DefaultCmsPageBrowserModel" scope="prototype">
+    <bean id="DefaultCmsPageBrowserModel" class="com.zakapps.cockpits.cmscockpit.session.impl.DefaultCmsPageBrowserModel" scope="prototype">
         <constructor-arg ref="cmsAdminSiteService"/>
         <constructor-arg ref="cmsCockpitService"/>
         <constructor-arg ref="modelService"/>

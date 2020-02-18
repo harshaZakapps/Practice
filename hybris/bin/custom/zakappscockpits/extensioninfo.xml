@@ -21,7 +21,7 @@
 		<requires-extension name="reportcockpit"/>
 		<requires-extension name="acceleratorcms"/>
 
-	<coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.hybris.zakapps.cockpits"/>
+	<coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.zakapps.cockpits"/>
 		
 		
 
