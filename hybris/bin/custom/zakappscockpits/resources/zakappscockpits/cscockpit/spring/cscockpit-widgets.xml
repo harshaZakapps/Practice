@@ -18,7 +18,7 @@
 
 	<alias alias="csProductUrlStrategy" name="acceleratorCsProductUrlStrategy" />
 	<bean id="acceleratorCsProductUrlStrategy"
-		class="com.zakapps.cockpits.cscockpit.widgets.controllers.strategies.impl.AcceleratorProductUrlStrategy"
+		class="com.hybris.zakapps.cockpits.cscockpit.widgets.controllers.strategies.impl.AcceleratorProductUrlStrategy"
 		parent="defaultBaseCsProductUrlStrategy">
 		<property name="siteBaseUrlResolutionService" ref="siteBaseUrlResolutionService" />
 	</bean>

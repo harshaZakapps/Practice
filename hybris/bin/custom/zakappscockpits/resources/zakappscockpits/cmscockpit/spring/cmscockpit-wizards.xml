@@ -43,14 +43,14 @@
 	</bean>
 
 	<alias alias="themeSelectorPage" name="accThemeSelectorPage" />
-	<bean id="accThemeSelectorPage" class="com.zakapps.cockpits.cmscockpit.sitewizard.ThemeSelectorPage" scope="prototype">
+	<bean id="accThemeSelectorPage" class="com.hybris.zakapps.cockpits.cmscockpit.sitewizard.ThemeSelectorPage" scope="prototype">
 		<property name="id" value="themeSelectorPage"/>
 		<property name="title" value="cockpit.wizard.cmssite.page.typeSelector" />
 		<property name="componentURI" value="themeSelector.zul"/>
 	</bean>
 
 	<alias alias="cmsSummaryPage" name="accCmsSummaryPage" />
-	<bean id="accCmsSummaryPage" class="com.zakapps.cockpits.cmscockpit.sitewizard.SummaryPage" scope="prototype">
+	<bean id="accCmsSummaryPage" class="com.hybris.zakapps.cockpits.cmscockpit.sitewizard.SummaryPage" scope="prototype">
 		<property name="id" value="cmsSummaryPage"/>
 		<property name="title" value="cockpit.wizard.cmssite.page.summary" />
 	</bean>
@@ -62,7 +62,7 @@
 		<property name="nextPageWizardId" value="themeSelectorPage"/>
 	</bean>
 
-	<bean id="acceleratorWizardHelper" class="com.zakapps.cockpits.cmscockpit.sitewizard.AcceleratorWizardHelper" >
+	<bean id="acceleratorWizardHelper" class="com.hybris.zakapps.cockpits.cmscockpit.sitewizard.AcceleratorWizardHelper" >
 		<property name="catalogVersionService" ref="catalogVersionService"/>
 		<property name="cmsAdminPageService" ref="cmsAdminPageService"/>
 		<property name="modelService" ref="modelService"/>
@@ -70,7 +70,7 @@
 		<property name="importService" ref="importService"/>
 	</bean>
 
-	<bean id="b2bAcceleratorWizardHelper" class="com.zakapps.cockpits.cmscockpit.sitewizard.B2BAcceleratorWizardHelper" parent="acceleratorWizardHelper" />
+	<bean id="b2bAcceleratorWizardHelper" class="com.hybris.zakapps.cockpits.cmscockpit.sitewizard.B2BAcceleratorWizardHelper" parent="acceleratorWizardHelper" />
 
 	<bean id="defaultCmsPageSelectorPage" class="de.hybris.platform.cmscockpit.wizard.page.TypeSelectorPage" scope="prototype">
 		<property name="id" value="typeSelector"/>
@@ -86,7 +86,7 @@
 	</bean>
 	
 	<alias alias="imageMediaPredefinedValuesStrategy" name="cmsImageMediaPredefinedValuesStrategy"/>
-	<bean id="cmsImageMediaPredefinedValuesStrategy" class="com.zakapps.cockpits.cmscockpit.wizard.strategies.CmsImageMediaPredefinedValuesStrategy" parent="defaultImageMediaPredefinedValuesStrategy">
+	<bean id="cmsImageMediaPredefinedValuesStrategy" class="com.hybris.zakapps.cockpits.cmscockpit.wizard.strategies.CmsImageMediaPredefinedValuesStrategy" parent="defaultImageMediaPredefinedValuesStrategy">
 		<property name="cmsAdminSiteService" ref="cmsAdminSiteService"/>
 	</bean>
 	

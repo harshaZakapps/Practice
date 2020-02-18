@@ -17,8 +17,9 @@
 			extensions which are automatically required -->
 		<requires-extension name="acceleratorcms"/>
 		<requires-extension name="solrserver"/>
+		<requires-extension name="zakappscommerceservices" />
 
-		<coremodule generated="true" manager="com.zakapps.core.jalo.ZakappsCoreManager" packageroot="com.zakapps.core"/>
+		<coremodule generated="true" manager="com.hybris.zakapps.core.jalo.ZakappsCoreManager" packageroot="com.hybris.zakapps.core"/>
 
 		
 		

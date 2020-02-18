@@ -24,79 +24,79 @@
 
 	<!-- Order Process Actions -->
 
-	<bean id="abstractOrderAction" class="com.zakapps.fulfilmentprocess.actions.order.AbstractOrderAction"  abstract="true" parent="abstractAction">
+	<bean id="abstractOrderAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.AbstractOrderAction"  abstract="true" parent="abstractAction">
 		<property name="timeService" ref="timeService"/>
 	</bean>
 
-	<bean id="checkOrderAction" class="com.zakapps.fulfilmentprocess.actions.order.CheckOrderAction"  parent="abstractAction">
+	<bean id="checkOrderAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.CheckOrderAction"  parent="abstractAction">
 		<property name="checkOrderService" ref="checkOrderService"/>
 	</bean>
 
-	<bean id="cancelWholeOrderAuthorizationAction" class="com.zakapps.fulfilmentprocess.actions.order.CancelWholeOrderAuthorizationAction"
+	<bean id="cancelWholeOrderAuthorizationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.CancelWholeOrderAuthorizationAction"
             parent="abstractAction">
 		<property name="paymentService" ref="paymentService"/>
     </bean>
 
-	<bean id="sendOrderPlacedNotificationAction" class="com.zakapps.fulfilmentprocess.actions.order.SendOrderPlacedNotificationAction"  parent="abstractAction">
+	<bean id="sendOrderPlacedNotificationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SendOrderPlacedNotificationAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="takePaymentAction" class="com.zakapps.fulfilmentprocess.actions.order.TakePaymentAction"  parent="abstractAction">
+	<bean id="takePaymentAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.TakePaymentAction"  parent="abstractAction">
 		<property name="paymentService" ref="paymentService"/>
     </bean>
 
-	<bean id="sendPaymentFailedNotificationAction" class="com.zakapps.fulfilmentprocess.actions.order.SendPaymentFailedNotificationAction"  parent="abstractAction">
+	<bean id="sendPaymentFailedNotificationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SendPaymentFailedNotificationAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="checkTransactionReviewStatusAction" class="com.zakapps.fulfilmentprocess.actions.order.CheckTransactionReviewStatusAction"  parent="abstractAction">
+	<bean id="checkTransactionReviewStatusAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.CheckTransactionReviewStatusAction"  parent="abstractAction">
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
 
-	<bean id="fraudCheckOrderAction" class="com.zakapps.fulfilmentprocess.actions.order.FraudCheckOrderAction"  parent="abstractOrderAction">
+	<bean id="fraudCheckOrderAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.FraudCheckOrderAction"  parent="abstractOrderAction">
 		<property name="fraudService" ref="fraudService"/>
 		<property name="providerName" value="Mockup_3rdPartyProvider"/>
 	</bean>
 
-	<bean id="prepareOrderForManualCheckAction" class="com.zakapps.fulfilmentprocess.actions.order.PrepareOrderForManualCheckAction"  parent="abstractAction">
+	<bean id="prepareOrderForManualCheckAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.PrepareOrderForManualCheckAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="sendFraudErrorNotificationAction" class="com.zakapps.fulfilmentprocess.actions.order.SendFraudErrorNotificationAction"  parent="abstractAction">
+	<bean id="sendFraudErrorNotificationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SendFraudErrorNotificationAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="checkAuthorizeOrderPaymentAction" class="com.zakapps.fulfilmentprocess.actions.order.CheckAuthorizeOrderPaymentAction"  parent="abstractAction"/>
+	<bean id="checkAuthorizeOrderPaymentAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.CheckAuthorizeOrderPaymentAction"  parent="abstractAction"/>
 
-	<bean id="sendAuthorizationFailedNotificationAction" class="com.zakapps.fulfilmentprocess.actions.order.SendAuthorizationFailedNotificationAction"  parent="abstractAction">
+	<bean id="sendAuthorizationFailedNotificationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SendAuthorizationFailedNotificationAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="reserveOrderAmountAction" class="com.zakapps.fulfilmentprocess.actions.order.ReserveOrderAmountAction"  parent="abstractAction"/>
+	<bean id="reserveOrderAmountAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.ReserveOrderAmountAction"  parent="abstractAction"/>
 
-	<bean id="fraudCheckOrderInternalAction" class="com.zakapps.fulfilmentprocess.actions.order.FraudCheckOrderInternalAction"  parent="abstractOrderAction">
+	<bean id="fraudCheckOrderInternalAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.FraudCheckOrderInternalAction"  parent="abstractOrderAction">
 		<property name="fraudService" ref="fraudService"/>
 		<property name="providerName" value="hybris"/>
 	</bean>
 
-	<bean id="orderManualCheckedAction" class="com.zakapps.fulfilmentprocess.actions.order.OrderManualCheckedAction"  parent="abstractOrderAction"/>
+	<bean id="orderManualCheckedAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.OrderManualCheckedAction"  parent="abstractOrderAction"/>
 
-	<bean id="splitOrderAction" class="com.zakapps.fulfilmentprocess.actions.order.SplitOrderAction"  parent="abstractAction">
+	<bean id="splitOrderAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SplitOrderAction"  parent="abstractAction">
 		<property name="orderSplittingService" ref="orderSplittingService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 
-	<bean id="subprocessesCompletedAction" class="com.zakapps.fulfilmentprocess.actions.order.SubprocessesCompletedAction"  parent="abstractAction"/>
+	<bean id="subprocessesCompletedAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SubprocessesCompletedAction"  parent="abstractAction"/>
 
-	<bean id="sendOrderCompletedNotificationAction" class="com.zakapps.fulfilmentprocess.actions.order.SendOrderCompletedNotificationAction"  parent="abstractAction">
+	<bean id="sendOrderCompletedNotificationAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.SendOrderCompletedNotificationAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 
-	<bean id="scheduleForCleanUpAction" class="com.zakapps.fulfilmentprocess.actions.order.ScheduleForCleanUpAction"  parent="abstractAction">
+	<bean id="scheduleForCleanUpAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.ScheduleForCleanUpAction"  parent="abstractAction">
 		<property name="timeService" ref="timeService"/>
 	</bean>
 
-	<bean id="notifyCustomerAboutFraudAction" class="com.zakapps.fulfilmentprocess.actions.order.NotifyCustomerAboutFraudAction"  parent="abstractAction">
+	<bean id="notifyCustomerAboutFraudAction" class="com.hybris.zakapps.fulfilmentprocess.actions.order.NotifyCustomerAboutFraudAction"  parent="abstractAction">
 		<property name="eventService" ref="eventService"/>
 	</bean>
 

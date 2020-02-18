@@ -18,8 +18,8 @@
 		<collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
 		<collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
 		                type="set"/>
+		<collectiontype code="OrderList" elementtype="Order" autocreate="true" generate="true" type="list"/>
 	</collectiontypes>
-
 
 	<enumtypes>
 		<enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
@@ -38,17 +38,44 @@
 		</enumtype>
 	</enumtypes>
 
+
+
 	<itemtypes>
 
 		<!-- Add your item definitions here -->
 
 
 		<!-- TypeGroups are for structure of this file only -->
+		<typegroup>
+			<itemtype code="OrderSummaryEmailProcess" autocreate="true" generate="true"
+					  jaloclass="com.hybris.zakapps.core.jalo.OrderSummaryEmailProcess"
+					  extends="StorefrontCustomerProcess">
+				<attributes>
+					<attribute qualifier="orders" type="OrderList">
+						<description>List of orders for the given date</description>
+						<modifiers/>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
+			</itemtype>
+		</typegroup>
+
+		<typegroup name="OrderSummary">
+			<itemtype code="OrderSummaryCronJob" extends="CronJob"
+					  jaloclass="com.hybris.zakapps.core.jalo.OrderSummaryCronJob">
+				<attributes>
+					<attribute qualifier="orderDate" type="localized:java.util.Date">
+						<modifiers/>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
+			</itemtype>
+		</typegroup>
 
 		<typegroup name="Apparel">
 			<itemtype code="ApparelProduct" extends="Product"
 			          autocreate="true" generate="true"
-			          jaloclass="com.zakapps.core.jalo.ApparelProduct">
+			          jaloclass="com.hybris.zakapps.core.jalo.ApparelProduct">
 				<description>Base apparel product extension that contains additional attributes.</description>
 				<attributes>
 					<attribute qualifier="genders" type="GenderList">
@@ -61,7 +88,7 @@
 
 			<itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
 			          autocreate="true" generate="true"
-			          jaloclass="com.zakapps.core.jalo.ApparelStyleVariantProduct">
+			          jaloclass="com.hybris.zakapps.core.jalo.ApparelStyleVariantProduct">
 				<description>Apparel style variant type that contains additional attribute describing variant style.
 				</description>
 				<attributes>
@@ -84,7 +111,7 @@
 
 			<itemtype code="ApparelSizeVariantProduct" extends="ApparelStyleVariantProduct"
 			          autocreate="true" generate="true"
-			          jaloclass="com.zakapps.core.jalo.ApparelSizeVariantProduct">
+			          jaloclass="com.hybris.zakapps.core.jalo.ApparelSizeVariantProduct">
 				<description>Apparel size variant type that contains additional attribute describing variant size.
 				</description>
 				<attributes>
@@ -101,7 +128,7 @@
 		<typegroup name="Electronics">
 			<itemtype code="ElectronicsColorVariantProduct" extends="VariantProduct"
           autocreate="true" generate="true"
-          jaloclass="com.zakapps.core.jalo.ElectronicsColorVariantProduct">
+          jaloclass="com.hybris.zakapps.core.jalo.ElectronicsColorVariantProduct">
 				 <description>Electronics color variant type that contains additional attribute describing variant color.
 				</description>
 				<attributes>

@@ -40,7 +40,7 @@
 		<!-- <property name="activeSiteCode" value="site"/> -->
 		<property name="navigationArea" ref="LiveEditNavigationArea"/>
 		<property name="browserArea">
-			<bean class="com.zakapps.cockpits.cmscockpit.session.impl.DefaultLiveEditBrowserArea">
+			<bean class="com.hybris.zakapps.cockpits.cmscockpit.session.impl.DefaultLiveEditBrowserArea">
 				<property name="viewURI" value="/cmscockpit/liveeditBrowser.zul"/>
 				<property name="commonI18NService" ref="commonI18NService"/>
 			</bean>
@@ -117,7 +117,7 @@
 	</bean>
 
 	<!-- Default CMS Preview Loader -->
-	<bean id="cmsPreviewLoader" class="com.zakapps.cockpits.components.liveedit.DefaultAcceleratorPreviewLoader"/>
+	<bean id="cmsPreviewLoader" class="com.hybris.zakapps.cockpits.components.liveedit.DefaultAcceleratorPreviewLoader"/>
 
 	<!--#### Live edit perspective end #### -->
 </beans>

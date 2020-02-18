@@ -64,7 +64,7 @@
 	</security:http>
 
 	<!-- Ignores url(s) that match paths specified in the set -->
-	<bean id="excludeUrlRequestMatcher" class="com.zakapps.storefront.security.ExcludeUrlRequestMatcher">
+	<bean id="excludeUrlRequestMatcher" class="com.hybris.zakapps.storefront.security.ExcludeUrlRequestMatcher">
 		<property name="excludeUrlSet" ref="excludeUrlSet"/>
 		<property name="pathMatcher" ref="defaultPathMatcher"/>
 	</bean>
@@ -129,19 +129,19 @@
 	</security:authentication-manager>
 
 	<bean id="acceleratorAuthenticationProvider" parent="abstractAcceleratorAuthenticationProvider" 
-			class="com.zakapps.storefront.security.AcceleratorAuthenticationProvider">
+			class="com.hybris.zakapps.storefront.security.AcceleratorAuthenticationProvider">
 		<property name="adminGroup" value="ROLE_ADMINGROUP"/>
 	</bean>
 
 	<bean id="coreUserDetailsService" class="de.hybris.platform.spring.security.CoreUserDetailsService"  />
 
-	<bean id="guidCookieStrategy" class="com.zakapps.storefront.security.impl.DefaultGUIDCookieStrategy"
+	<bean id="guidCookieStrategy" class="com.hybris.zakapps.storefront.security.impl.DefaultGUIDCookieStrategy"
 	      >
 		<property name="cookieGenerator" ref="guidCookieGenerator" />
 	</bean>
 	
 	<alias name="defaultGuestCheckoutCartCleanStrategy" alias="guestCheckoutCartCleanStrategy"/>
-	<bean id="defaultGuestCheckoutCartCleanStrategy" class="com.zakapps.storefront.security.impl.DefaultGuestCheckoutCartCleanStrategy">
+	<bean id="defaultGuestCheckoutCartCleanStrategy" class="com.hybris.zakapps.storefront.security.impl.DefaultGuestCheckoutCartCleanStrategy">
 		<property name="checkoutURLPattern" value="#{configurationService.configuration.getProperty('zakappsstorefront.checkout.url.pattern')}" />
 		<property name="checkoutCustomerStrategy"  ref="checkoutCustomerStrategy" />
 		<property name="cartService" ref="cartService" />
@@ -150,20 +150,20 @@
 	</bean>
 
 	<alias name="defaultGuidCookieGenerator" alias="guidCookieGenerator"/>
-	<bean id="defaultGuidCookieGenerator" class="com.zakapps.storefront.security.cookie.EnhancedCookieGenerator" >
+	<bean id="defaultGuidCookieGenerator" class="com.hybris.zakapps.storefront.security.cookie.EnhancedCookieGenerator" >
 		<property name="cookieSecure" value="true" />
 		<property name="cookieName" value="acceleratorSecureGUID" />
 		<property name="httpOnly" value="true"/>
 	</bean>
 
-	<bean id="autoLoginStrategy" class="com.zakapps.storefront.security.impl.DefaultAutoLoginStrategy" >
+	<bean id="autoLoginStrategy" class="com.hybris.zakapps.storefront.security.impl.DefaultAutoLoginStrategy" >
 		<property name="authenticationManager" ref="authenticationManager" />
 		<property name="customerFacade" ref="customerFacade" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy"/>
 		<property name="rememberMeServices" ref="rememberMeServices"/>
 	</bean>
 
-	<bean id="httpSessionRequestCache" class="com.zakapps.storefront.security.impl.WebHttpSessionRequestCache">
+	<bean id="httpSessionRequestCache" class="com.hybris.zakapps.storefront.security.impl.WebHttpSessionRequestCache">
         <property name="requestMatcher" ref="excludeRedirectUrlRequestMatcher" />
 		<property name="sessionService" ref="sessionService"/>
 	</bean>
@@ -176,7 +176,7 @@
 	</bean> -->
 
 	<!-- Ignores url(s) that match paths specified in the set -->
-	<bean id="excludeRedirectUrlRequestMatcher" class="com.zakapps.storefront.security.ExcludeUrlRequestMatcher">
+	<bean id="excludeRedirectUrlRequestMatcher" class="com.hybris.zakapps.storefront.security.ExcludeUrlRequestMatcher">
 	<property name="excludeUrlSet">
 		<set>
 			<value>.*/guest/.*</value>
@@ -192,7 +192,7 @@
 
 	<!-- Login Success Handlers -->
 
-	<bean id="loginGuidAuthenticationSuccessHandler" class="com.zakapps.storefront.security.GUIDAuthenticationSuccessHandler" >
+	<bean id="loginGuidAuthenticationSuccessHandler" class="com.hybris.zakapps.storefront.security.GUIDAuthenticationSuccessHandler" >
 		<property name="authenticationSuccessHandler" ref="loginAuthenticationSuccessHandler" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy" />
 	</bean>
@@ -222,7 +222,7 @@
 		</property>
 	</bean>
 
-	<bean id="loginCheckoutGuidAuthenticationSuccessHandler" class="com.zakapps.storefront.security.GUIDAuthenticationSuccessHandler" >
+	<bean id="loginCheckoutGuidAuthenticationSuccessHandler" class="com.hybris.zakapps.storefront.security.GUIDAuthenticationSuccessHandler" >
 		<property name="authenticationSuccessHandler" ref="loginCheckoutAuthenticationSuccessHandler" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy" />
 	</bean>
@@ -252,17 +252,17 @@
 	</bean>
 
 	<alias name="defaultCommerceRedirectStrategy" alias="commerceRedirectStrategy"/>
-	<bean name="defaultCommerceRedirectStrategy" class="com.zakapps.storefront.security.impl.DefaultCommerceRedirectStrategy" parent="redirectStrategy">
+	<bean name="defaultCommerceRedirectStrategy" class="com.hybris.zakapps.storefront.security.impl.DefaultCommerceRedirectStrategy" parent="redirectStrategy">
 		<property name="checkoutFlowFacade" ref="checkoutFlowFacade"/>
 		<property name="expressTargetUrl" value="/checkout/multi/express"/>
    </bean>
 
-	<bean id="loginAuthenticationFailureHandler" class="com.zakapps.storefront.security.LoginAuthenticationFailureHandler" >
+	<bean id="loginAuthenticationFailureHandler" class="com.hybris.zakapps.storefront.security.LoginAuthenticationFailureHandler" >
         <property name="bruteForceAttackCounter" ref="bruteForceAttackCounter" />
 		<property name="defaultFailureUrl" value="/login?error=true"/>
 	</bean>
 
-	<bean id="loginCheckoutAuthenticationFailureHandler" class="com.zakapps.storefront.security.LoginAuthenticationFailureHandler" >
+	<bean id="loginCheckoutAuthenticationFailureHandler" class="com.hybris.zakapps.storefront.security.LoginAuthenticationFailureHandler" >
         <property name="bruteForceAttackCounter" ref="bruteForceAttackCounter" />
 		<property name="defaultFailureUrl" value="/login/checkout?error=true"/>
 	</bean>
@@ -290,7 +290,7 @@
 
 	
 	<alias name="defaultRememberMeServices" alias="rememberMeServices"/>
-	<bean id="defaultRememberMeServices" class="com.zakapps.storefront.security.AcceleratorRememberMeServices" >
+	<bean id="defaultRememberMeServices" class="com.hybris.zakapps.storefront.security.AcceleratorRememberMeServices" >
 		<constructor-arg name="key" value="zakappsstorefront" />
 		<constructor-arg name="userDetailsService" ref="originalUidUserDetailsService" />
 		<property name="cookieName" value="zakappsstorefrontRememberMe" />

@@ -1,0 +1,31 @@
+## messageSource=classpath:/zakappscore/messages/email-orderSummary_$lang.properties
+
+<html>
+<head>
+</head>
+
+<body bgcolor="#ffffff">
+
+<h1>Hello ${ctx.displayName}</h1>
+<p>Please find the below list of order</p>
+<table style="width:100%;border:1px solid #000000" cellpadding="0" cellspacing="0">
+    <tr>
+        <th style="border:1px solid #000000">Code</th>
+        <th style="border:1px solid #000000">Name</th>
+        <th style="border:1px solid #000000">Price</th>
+        <th style="border:1px solid #000000">Discount</th>
+        <th style="border:1px solid #000000">Tax</th>
+    </tr>
+    #foreach ($order in $ctx.orders)
+    <tr>
+        <td style="border:1px solid #000000">$order.code</td>
+        <td style="border:1px solid #000000">$order.user.displayName</td>
+        <td style="border:1px solid #000000">$order.totalPrice</td>
+        <td style="border:1px solid #000000">$order.totalDiscounts</td>
+        <td style="border:1px solid #000000">$order.totalTax</td>
+    </tr>
+    #end
+</table>
+
+</body>
+</html>

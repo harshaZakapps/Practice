@@ -31,14 +31,14 @@
 	</bean>
 	
 	<alias name="defaultExternalTaxesSection" alias="externalTaxesSection"/>
-	<bean id="defaultExternalTaxesSection" class="com.zakapps.cockpits.productcockpit.editor.ExternalTaxesSectionConfiguration" scope="session">
+	<bean id="defaultExternalTaxesSection" class="com.hybris.zakapps.cockpits.productcockpit.editor.ExternalTaxesSectionConfiguration" scope="session">
 		<property name="sectionRenderer">
 			<ref bean="externalTaxesSectionRenderer"/>
 		</property>
 	</bean>
 	
 	<alias name="defaultExternalTaxesSectionRenderer" alias="externalTaxesSectionRenderer"/>
-	<bean id="defaultExternalTaxesSectionRenderer" class="com.zakapps.cockpits.productcockpit.editor.ExternalTaxesSectionRenderer" scope="prototype">
+	<bean id="defaultExternalTaxesSectionRenderer" class="com.hybris.zakapps.cockpits.productcockpit.editor.ExternalTaxesSectionRenderer" scope="prototype">
 		<property name="typeService" ref="cockpitTypeService"/>
 		<property name="productTaxCodeService" ref="productTaxCodeService"/>
 	</bean>

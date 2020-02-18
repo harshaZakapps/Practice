@@ -23,7 +23,7 @@
 	<context:annotation-config/> 
 
 	<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
-	<bean id="defaultSimpleSuggestionFacade" class="com.zakapps.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
+	<bean id="defaultSimpleSuggestionFacade" class="com.hybris.zakapps.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
 		<property name="simpleSuggestionService" ref="simpleSuggestionService"/>
 		<property name="userService" ref="userService"/>
 		<property name="categoryService" ref="categoryService"/>
@@ -51,7 +51,7 @@
 	</bean>
 
 	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
-	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.zakapps.facades.populators.AcceleratorVariantOptionDataPopulator"
+	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.hybris.zakapps.facades.populators.AcceleratorVariantOptionDataPopulator"
 	      parent="variantOptionDataPopulator" >
 		<property name="mediaService" ref="mediaService"/>
 		<property name="mediaContainerService" ref="mediaContainerService"/>
@@ -67,7 +67,7 @@
 
 	<alias name="acceleratorGenderConverter" alias="genderConverter"/> 
 	<bean id="acceleratorGenderConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass" value="com.zakapps.facades.product.data.GenderData"/>
+		<property name="targetClass" value="com.hybris.zakapps.facades.product.data.GenderData"/>
 			<property name="populators">
 				<list>
 					<ref bean="genderDataPopulator"/>
@@ -76,11 +76,11 @@
 	</bean>
 
 	<alias name="defaultGenderDataPopulator" alias="genderDataPopulator"/>
-	<bean id="defaultGenderDataPopulator" class="com.zakapps.facades.populators.GenderDataPopulator" >
+	<bean id="defaultGenderDataPopulator" class="com.hybris.zakapps.facades.populators.GenderDataPopulator" >
 		<property name="typeService" ref="typeService"/>
 	</bean>
 
-	<bean id="apparelProductPopulator" class="com.zakapps.facades.populators.ApparelProductPopulator" >
+	<bean id="apparelProductPopulator" class="com.hybris.zakapps.facades.populators.ApparelProductPopulator" >
 		<property name="genderConverter" ref="genderConverter"/>
 	</bean>
 
@@ -130,61 +130,68 @@
 		</property>
 	</bean>
 
-	<bean id="customerEmailContext" class="com.zakapps.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="customerEmailContext" class="com.hybris.zakapps.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="customerConverter" ref="customerConverter"/>
 	</bean>
 
-	<bean id="forgottenPasswordEmailContext" class="com.zakapps.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
+	<bean id="forgottenPasswordEmailContext" class="com.hybris.zakapps.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
 		<property name="customerConverter" ref="customerConverter"/>
 	</bean>
 	
-	<bean id="orderNotificationEmailContext" class="com.zakapps.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderNotificationEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
 	
-	<bean id="deliverySentEmailContext" class="com.zakapps.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="deliverySentEmailContext" class="com.hybris.zakapps.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 	</bean>
 	
-	<bean id="readyForPickupEmailContext" class="com.zakapps.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="readyForPickupEmailContext" class="com.hybris.zakapps.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 	</bean>
 	
-	<bean id="orderCancelledEmailContext" class="com.zakapps.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderCancelledEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
 	
-	<bean id="orderRefundEmailContext" class="com.zakapps.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderRefundEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
-	<bean id="consignmentCollectionReminderEmailContext" class="com.zakapps.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
+	<bean id="consignmentCollectionReminderEmailContext" class="com.hybris.zakapps.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
         <property name="consignmentConverter" ref="consignmentConverter"/>
         <property name="formatFactory" ref="formatFactory"/>
         <property name="customerServiceUncollectedConsignmentStrategy" ref="customerServiceUncollectedConsignmentStrategy" />
         <property name="orderConverter" ref="orderConverter"/>
     </bean>
 
-	<bean id="orderPartiallyModifiedEmailContext" class="com.zakapps.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderPartiallyModifiedEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 		<property name="orderEntryConverter" ref="orderEntryConverter"/>
 		<property name="priceDataFactory" ref="priceDataFactory"/>		
 	</bean>
 
-	<bean id="orderPartiallyCanceledEmailContext" class="com.zakapps.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	<bean id="orderPartiallyCanceledEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
 	</bean>
 
-	<bean id="orderPartiallyRefundedEmailContext" class="com.zakapps.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	<bean id="orderPartiallyRefundedEmailContext" class="com.hybris.zakapps.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
 	</bean>
 
-	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.zakapps.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.hybris.zakapps.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 		<property name="priceDataFactory" ref="priceDataFactory"/>
 	</bean>
 
 	<alias name="yacceleratorSearchPagePointOfServiceDistancePopulator" alias="searchPagePointOfServiceDistancePopulator" />
-	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.zakapps.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
+	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.hybris.zakapps.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
 		<property name="pointOfServiceDistanceConverter" ref="pointOfServiceDistanceConverter"/>
 	</bean>
 
-	<bean id="genderData" class="com.zakapps.facades.product.data.GenderData" scope="prototype"/>
+	<bean id="genderData" class="com.hybris.zakapps.facades.product.data.GenderData" scope="prototype"/>
+
+	<!-- Order Summary Email Process-->
+	<bean id="orderSummaryEmailContext"
+		  class="com.hybris.zakapps.facades.process.email.context.OrderSummaryEmailContext"
+		  parent="customerEmailContext"
+		  scope="prototype" >
+	</bean>
 </beans>

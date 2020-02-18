@@ -24,7 +24,7 @@
 		
 	<context:annotation-config/>
 
-	<context:component-scan  base-package="com.zakapps.storefront.controllers.pages.checkout" scope-resolver="de.hybris.platform.spring.IgnoreTenantScopeMetadataResolver" />
+	<context:component-scan  base-package="com.hybris.zakapps.storefront.controllers.pages.checkout" scope-resolver="de.hybris.platform.spring.IgnoreTenantScopeMetadataResolver" />
 	
 	<!-- Checkout Steps -->
 
@@ -307,18 +307,18 @@
 		<property name="checkoutFacade" ref="checkoutFacade"/>
 	</bean>
 
-	<bean id="defaultMultiStepCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="deliveryAddressCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="deliveryMethodCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPaymentMethodCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPickupCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultSummaryCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultMultiStepCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="deliveryAddressCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="deliveryMethodCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultPaymentMethodCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultPickupCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultSummaryCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 
-	<bean id="defaultResponsiveMultiStepCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveSummaryCheckoutValidator" class="com.zakapps.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveMultiStepCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveSummaryCheckoutValidator" class="com.hybris.zakapps.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	
 	<!--Validation-->
 

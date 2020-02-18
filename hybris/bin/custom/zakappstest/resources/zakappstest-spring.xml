@@ -25,11 +25,11 @@
 		
 	<context:annotation-config/> 
 
-	<bean id="yacceleratorTestDataSystemSetup" class="com.zakapps.test.setup.TestDataSystemSetup" parent="abstractCoreSystemSetup">
+	<bean id="yacceleratorTestDataSystemSetup" class="com.hybris.zakapps.test.setup.TestDataSystemSetup" parent="abstractCoreSystemSetup">
 		<property name="acceleratorTestOrderData" ref="acceleratorTestOrderData"/>
 	</bean>
 
-	<bean id="acceleratorTestOrderData" class="com.zakapps.test.orders.AcceleratorTestOrderData">
+	<bean id="acceleratorTestOrderData" class="com.hybris.zakapps.test.orders.AcceleratorTestOrderData">
 		<property name="impersonationService" ref="impersonationService"/>
 		<property name="cmsAdminSiteService" ref="cmsAdminSiteService"/>
 		<property name="userService" ref="userService"/>

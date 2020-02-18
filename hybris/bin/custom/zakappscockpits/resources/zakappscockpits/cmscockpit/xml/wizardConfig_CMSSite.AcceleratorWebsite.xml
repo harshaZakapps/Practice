@@ -25,7 +25,7 @@
 			<![CDATA[
 			/* all beanshell code extracted to helper method - ease for development */
 			import de.hybris.platform.core.Registry;
-			import com.zakapps.cockpits.cmscockpit.sitewizard.AcceleratorWizardHelper;
+			import com.hybris.zakapps.cockpits.cmscockpit.sitewizard.AcceleratorWizardHelper;
 			
 			AcceleratorWizardHelper accWizardHelper = (AcceleratorWizardHelper)Registry.getApplicationContext().getBean("acceleratorWizardHelper");
 			return accWizardHelper.createSite((Map)context);
